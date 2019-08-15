@@ -1,6 +1,6 @@
 {
   "name": "@devinekadeni/word-masking-helper",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Masking email and phone number",
   "license": "MIT",
   "repository": "devinekadeni/word-masking-helper",
