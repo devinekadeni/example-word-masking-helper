@@ -1,3 +1,10 @@
+/**
+ * Masking `Email` to `*` (default)
+ *
+ * @param {String} fullText Words that contain `email`.
+ * @param {String} replacement Masking replacement icon.
+ * @returns {String} Returns the `fullText` but changed the `email` into `replacement` if there is any `email`.
+ */
 const maskingEmail = (fullText, replacement = '*') => {
   const regexEmail = /([a-z0-9_.-]+)@([da-z.-]+)\.([a-z.]{2,6})/gm
   const listEmail = fullText.match(regexEmail)
@@ -31,6 +38,13 @@ const maskingEmail = (fullText, replacement = '*') => {
   return fullText
 }
 
+/**
+ * Masking `Phone number` to `*` (default)
+ *
+ * @param {String} fullText Words that contain `phone number`.
+ * @param {String} replacement Masking replacement icon.
+ * @returns {String} Returns the `fullText` but changed the `phoneNumber` into `replacement` if there is any `phoneNumber`.
+ */
 const maskingPhone = (fullText, replacement = '*') => {
   const regexPhone = /[+]*[(]?[+]?[0-9]{1,4}[)]?[-\s./0-9]*/gm
   const listPhone = fullText.match(regexPhone)
@@ -60,6 +74,13 @@ const maskingPhone = (fullText, replacement = '*') => {
   return fullText
 }
 
+/**
+ * Masking `Phone number and email` to `*` (default)
+ *
+ * @param {String} fullText Words that contain `phone number and email`.
+ * @param {String} replacement Masking replacement icon.
+ * @returns {String} Returns the `fullText` but changed the `phoneNumber and email` into `replacement` if there is any `phoneNumber and email`.
+ */
 const maskingEmailPhone = (fullText, replacement = '*') => {
   const maskedEmail = maskingEmail(fullText, replacement)
   return maskingPhone(maskedEmail, replacement)
